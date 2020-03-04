@@ -1,0 +1,60 @@
+<div class="mainContainer" *ngIf='gitusers'>
+    <h2>Github Users</h2>
+    <div class="search">
+        <input type="text" [formControl]='search' class="form-control">
+        <button class="btn btn-primary btn-sm" (click)='loadSearchResults()'>Search</button>
+    </div>
+    <div class="table_main">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>S NO </th>
+                    <th id='login'>Name</th>
+                    <th id='repos_url'>Repos</th>
+                    <th id='node_id'>Node Id</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="cursor: pointer;" *ngFor='let u of Data; let i=index;'>
+                    <td>{{(TableOption.params.lmt*(TableOption.params.page-1))+i+1}}</td>
+                    <td class="detailLink">{{u.login}}</td>
+                    <td (click)='getrepo(u.login)'> <a>Repositories</a> </td>
+                    <td>{{u.node_id}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf='!searchbar' class="pageOptions" appPagination [TableOption]='TableOption' [Support]='Support'
+            (UpdateData)='UpdateCmpData($event)'>
+            <div></div>
+        </div>
+    </div>
+</div>
+
+<div class="mainContainer" *ngIf='!gitusers'>
+    <h2>Github Repos for <i>{{repousername}}</i></h2>
+    <div class="search">
+        <button class="btn btn-info btn-sm" (click)='goback()'>Go back</button>
+    </div>
+    <div class="table_main">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>S NO </th>
+                    <th id='name'>Name</th>
+                    <th id='full_name'>Full name</th>
+                    <th id='language'>Language</th>
+                    <th id='default_branch'>default Branch</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="cursor: pointer;" *ngFor='let u of Data; let i=index;'>
+                    <td>{{i+1}}</td>
+                    <td>{{u.name}}</td>
+                    <td>{{u.full_name}}</td>
+                    <td>{{u.language}} </td>
+                    <td>{{u.default_branch}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

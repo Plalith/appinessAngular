@@ -1,0 +1,21 @@
+.header .logo {
+    width: 130px;
+    margin: 0px 41px;
+}
+
+.menues {
+    display: flex;
+    float: right;
+    margin: 33px 70px;
+    li {
+        list-style: none;
+        padding: 10px;
+        font-size: 17px;
+        font-family: cursive;
+        cursor: pointer;
+    }
+    li:hover {
+        border: solid 1px #7b7979;
+        border-radius: 15px;
+    }
+}

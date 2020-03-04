@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+.mainContainer {
+    padding: 50px;
+}
+
+
+
+
+// ***********************   tables Start
+
+/* Tables css */
+
+  
+  .pageOptions .paginationMain {
+    width: 750px;
+    margin: auto;
+    display: flex;
+    font: 100 12px;
+    color: #626262;
+  }
+  .pageOptions .totalCount,.Input,.PagesClicks {
+    padding: 10px 15px
+  }
+  .pageOptions .PagesClicks span {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  .pageOptions .PagesClicks span.Pagenow {
+    border: solid 1px;
+    border-radius: 50%;
+  }
+  .pageOptions .Input {
+    position: relative;
+    bottom: 5px;
+  }
+  .pageOptions .Input select {
+    border: solid 1px #626262;
+    border-radius: 3px;
+    padding: 4px;
+  }
+  .pageOptions .Input select:hover {
+    outline: 0;
+  }
+  .pageOptions .Input select:focus {
+    outline: 0;
+  }
+  
+  // ***********************  tables End
+  
